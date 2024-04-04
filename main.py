@@ -32,7 +32,7 @@ def select_device_dir():
 
     device_dir = fd.askdirectory(
         mustexist=True,
-        title='Select directory')
+        title='Select device directory')
 
     showinfo(
         title='Selected Directory',
@@ -42,12 +42,33 @@ def select_device_dir():
     bm.set_device_path(device_dir)
 
 
-open_button = ttk.Button(
+def select_backup_dir():
+
+    backup_dir = fd.askdirectory(
+        mustexist=True,
+        title='Select backup directory')
+
+    showinfo(
+        title='Selected Directory',
+        message=backup_dir
+    )
+
+    bm.set_backup_path(backup_dir)
+
+
+device_open_button = ttk.Button(
     root,
     text='Open dir',
     command=select_device_dir
 )
-open_button.pack(expand=True)
+device_open_button.pack(expand=True)
 
+
+backup_open_button = ttk.Button(
+    root,
+    text='Open dir',
+    command=select_backup_dir
+)
+backup_open_button.pack(expand=True)
 
 root.mainloop()
