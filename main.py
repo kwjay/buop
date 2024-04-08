@@ -19,11 +19,5 @@ device_open_button = ttk.Button(
 device_open_button.pack(expand=True)
 
 
-backup_open_button = ttk.Button(
-    root,
-    text='Open backup directory',
-    command=bm.select_backup_dir
-)
-backup_open_button.pack(expand=True)
 
 root.mainloop()
